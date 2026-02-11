@@ -6,7 +6,7 @@ const ValentinesProposal = () => {
     const [noCount, setNoCount] = useState(0);
     const [yesPressed, setYesPressed] = useState(false);
     const [yesButtonSize, setYesButtonSize] = useState(1);
-    const [isMuted, setIsMuted] = useState(true);
+    const [isMuted, setIsMuted] = useState(false);
     const [isNoButtonVisible, setIsNoButtonVisible] = useState(true);
     const [, setHeartPosition] = useState({ x: 0, y: 0 });
     const [chaos, setChaos] = useState(0);
@@ -24,15 +24,24 @@ const ValentinesProposal = () => {
         "You're entertaining me! 🎭", "Keep dancing! 💃", "Plot twist: I'm a ghost! 👻",
         "Maybe in another universe! 🌌", "Task failed successfully! 💫",
         "I'm inevitable! 🧤", "Running.exe has crashed! 💻", "404: Click not found! 🔍",
-        "You're quite determined! 🎯", "Still here? 👀", "I'm getting dizzy! 🌀"
+        "You're quite determined! 🎯", "Still here? 👀", "I'm getting dizzy! 🌀","Almost caught a vibe there! 🌳",
+        "Your mouse is walking like a game character! 🕹️",
+        "Wait, let me check the logs... still no! 📋",
+        "You're more persistent than a leg day! 🏋️‍♂️",
+        "Is the Pink Phone lagging? 📱",
+        "Access Denied: Please provide chocolate to proceed. 🍫",
+        "I'm harder to catch than a 400kg squat! 🚀",
+        "Getting warmer... but still no! 🌡️",
+        "System Update: Button moved to a better location. 📍",
+        "Stop crying and just click it! 😂",
     ];
 
     const modes = {
-        normal: { bg: 'bg-pink-100', text: 'text-pink-600' },
-        party: { bg: 'bg-gradient-to-r from-purple-400 via-pink-500 to-red-500', text: 'text-white' },
-        ghost: { bg: 'bg-gray-900', text: 'text-purple-500' },
-        coffee: { bg: 'bg-amber-100', text: 'text-amber-800' },
-        cat: { bg: 'bg-orange-100', text: 'text-orange-600' }
+        normal: { bg: 'bg-pink-100', text: 'text-pink-600', musicId: 'kTJczUoc26U' },
+        party: { bg: 'bg-gradient-to-r from-purple-400 via-pink-500 to-red-500', text: 'text-white', musicId: 'RgKAFK5djSk' },
+        ghost: { bg: 'bg-gray-900', text: 'text-purple-500', musicId: 'aJOTlE1K90k' },
+        coffee: { bg: 'bg-amber-100', text: 'text-amber-800', musicId: 'BcqxLCWn-CE' },
+        cat: { bg: 'bg-orange-100', text: 'text-orange-600', musicId: 'SzQG_qK4LVo' }
     };
 
     useEffect(() => {
@@ -153,31 +162,45 @@ const ValentinesProposal = () => {
                 <div className="z-10 bg-white/80 p-8 rounded-xl backdrop-blur-sm shadow-xl">
                     <Crown className="w-16 h-16 mx-auto mb-4 text-yellow-500 animate-bounce" />
                     <h1 className="text-4xl font-bold text-pink-600 mb-4 animate-pulse">
-                        🎉 MISSION ACCOMPLISHED! 🎉
+                        💖 IT&#39;S OFFICIAL! 💖
                     </h1>
+                    <iframe
+                        width="0"
+                        height="0"
+                        src="https://www.youtube.com/embed/et1M7Kky1OE?autoplay=1"
+                        allow="autoplay"
+                        className="hidden"
+                    ></iframe>
                     <div className="space-y-4 max-w-md mx-auto">
                         <p className="text-xl text-pink-500">
                             After {noCount} attempts to escape destiny,
                             you&#39;ve finally embraced the
-                            inevitable! {Math.floor(noCount * 1.5)} mouse kilometers traveled...
+                            inevitable 😭! {Math.floor(noCount * 1.5)} mouse kilometers traveled...
+                        </p>
+                        <span className="text-xl text-pink-500 font-bold">You caught the button (and my heart)! No more running—you&#39;re officially my favorite Valentine.</span>
+                        <p className="text-lg text-pink-600 italic">
+                            I might walk like a game character, but I&#39;m glad I walked into you.
                         </p>
                         <div className="flex flex-wrap gap-2 justify-center my-4">
-                            {noCount > 10 && <span className="px-3 py-1 bg-purple-200 rounded-full text-sm">Party Animal 🎉</span>}
-                            {noCount > 20 && <span className="px-3 py-1 bg-gray-200 rounded-full text-sm">Ghost Hunter 👻</span>}
-                            {noCount > 30 && <span className="px-3 py-1 bg-amber-200 rounded-full text-sm">Coffee Lover ☕</span>}
+                            {noCount > 10 && <span className="px-3 py-1 bg-purple-200 rounded-full text-sm">Favorite Person ❤️</span>}
+                            {noCount > 20 && <span className="px-3 py-1 bg-gray-200 rounded-full text-sm">Kinder Joy Queen 🍫</span>}
+                            {noCount > 30 && <span className="px-3 py-1 bg-amber-200 rounded-full text-sm">Finally Mine ✨</span>}
                             {noCount > 40 && <span className="px-3 py-1 bg-orange-200 rounded-full text-sm">Cat Whisperer 🐱</span>}
                         </div>
                         <p className="text-lg text-pink-600 animate-pulse">
                             Achievements Unlocked:
-                            {noCount > 50 ? " Ultimate Persistence Master 🏆" :
-                                noCount > 30 ? " Professional Button Dodger 🎯" :
-                                    noCount > 20 ? " Dedicated Love Seeker 💘" :
-                                        " Valentine Rookie 🌱"}
+                            {noCount > 50 ? " Legendary Heart-Hacker 👑" :
+                                noCount > 30 ? " Most Persistent Favorite 💖" :
+                                    noCount > 20 ? " Dedicated Vibe-Finder 🔍" :
+                                        " Instant Match Found ⚡"}
                         </p>
-                        <div className="text-sm text-pink-400 mt-4 font-mono border-t pt-4">
-                            <p>Contract sealed with {noCount * 1000} pixels of determination</p>
+                        <div className="text-sm text-pink-400 mt-6 font-mono border-t border-pink-100 pt-4">
+                            <p>System Status: Connection Secured 🔐</p>
+                            <p>Location: Far away from the dustbins, just us. 🌳</p>
                             <p>Timestamp: {new Date().toLocaleString()}</p>
-                            <p className="text-xs mt-2">* Terms and conditions apply. No refunds. All sales final. 😘</p>
+                            <p className="text-xs mt-2 text-pink-500 font-bold">
+                                * No more crying. Only Kinder Joys from now on. 😘
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -205,6 +228,16 @@ const ValentinesProposal = () => {
                 className="absolute top-4 right-4 p-2 rounded-full bg-white/50 hover:bg-white/80 transition-colors"
             >
                 {isMuted ? <VolumeX className={modes[currentMode].text} /> : <Music className={modes[currentMode].text} />}
+                {/* Music changes automatically based on currentMode */}
+                {!isMuted && (
+                    <iframe
+                        width="0"
+                        height="0"
+                        src={`https://www.youtube.com/embed/${showSuccess ? 'QJO3ROT-A4E' : modes[currentMode].musicId}?autoplay=1`}
+                        allow="autoplay"
+                        className="hidden"
+                    ></iframe>
+                )}
             </button>
 
             {currentMode === 'party' && <Sparkles className="absolute top-8 left-8 text-yellow-500 animate-spin" />}
