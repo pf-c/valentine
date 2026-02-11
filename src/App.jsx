@@ -6,7 +6,7 @@ const ValentinesProposal = () => {
     const [noCount, setNoCount] = useState(0);
     const [yesPressed, setYesPressed] = useState(false);
     const [yesButtonSize, setYesButtonSize] = useState(1);
-    const [isMuted, setIsMuted] = useState(false);
+    const [isMuted, setIsMuted] = useState(true);
     const [isNoButtonVisible, setIsNoButtonVisible] = useState(true);
     const [, setHeartPosition] = useState({ x: 0, y: 0 });
     const [chaos, setChaos] = useState(0);
